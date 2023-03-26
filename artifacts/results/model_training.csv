@@ -1,0 +1,5 @@
+model_id,model,model_version,batch,imgsz,cpu_count,gpu,gpu_count,running_time,date_started
+yolov8n_16_640,yolov8,nano,16,640,40,rtx1080,1,9:20h,2023-03-14
+yolov8n_8_1280,yolov8,nano,8,1280,80,rtx8000,2,10:59h,2023-03-18
+yolov8l_16_640,yolov8,large,16,640,64,v100,2,12h,2023-03-20
+yolov8l_8_1280,yolov8,large,8,1280,64,v100,4,1:02d,2023-03-21

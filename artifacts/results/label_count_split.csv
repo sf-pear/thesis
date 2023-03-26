@@ -1,0 +1,63 @@
+label,count,split
+Anemone,22,train
+Octopus,8,train
+Other,35,train
+Equipment,23,train
+Poeobius meseres,856,train
+Ctenophora,5174,train
+Larvacean,113,train
+Medusae,2708,train
+Siphonophorae,6188,train
+Mysida,46,train
+Worm,16,train
+Echinoderm,553,train
+Pasiphaea,270,train
+Euphausiacea,500,train
+Eusergestes similis,644,train
+Crustacea,21,train
+Squid,180,train
+Sponge,18,train
+Pennatulacea,12,train
+Coral,10,train
+Fish,4398,train
+Worm,11,val
+Eusergestes similis,200,val
+Sponge,6,val
+Squid,12,val
+Coral,3,val
+Pasiphaea,97,val
+Euphausiacea,162,val
+Fish,1668,val
+Other,3,val
+Equipment,6,val
+Poeobius meseres,263,val
+Anemone,5,val
+Octopus,4,val
+Ctenophora,1747,val
+Crustacea,6,val
+Medusae,836,val
+Siphonophorae,2065,val
+Mysida,18,val
+Echinoderm,124,val
+Larvacean,31,val
+Anemone,9,test
+Octopus,1,test
+Other,20,test
+Equipment,6,test
+Poeobius meseres,263,test
+Ctenophora,1652,test
+Larvacean,22,test
+Medusae,935,test
+Siphonophorae,2182,test
+Crustacea,32,test
+Echinoderm,177,test
+Worm,7,test
+Euphausiacea,215,test
+Pasiphaea,83,test
+Eusergestes similis,203,test
+Coral,14,test
+Squid,25,test
+Sponge,9,test
+Mysida,8,test
+Pennatulacea,6,test
+Fish,1149,test
