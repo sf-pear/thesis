@@ -1,6 +1,7 @@
+import os
 import fiftyone as fo
 
-abs_path = "/mnt/c/Users/sabri/Documents/github/thesis/datasets"
+abs_path = f"{os.getcwd()}/datasets" # get pwd so it works anywhere with the same file structure without changing the code
 rov_path = "/rov"
 auv_path = "/auv"
 
