@@ -1,0 +1,13 @@
+name: ocean
+dependencies:
+  - python=3.8.16
+  - pip
+  - ipykernel
+  - dvc
+  - pandas=1.5.3
+  - polars=0.16.13
+  - scikit-learn=1.2.2
+  - pip:
+    - fiftyone
+    - ultralytics==8.0.51
+    - click
