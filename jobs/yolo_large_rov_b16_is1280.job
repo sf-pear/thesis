@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#SBATCH --job-name=yolo_large_rov               # Job name
+#SBATCH --output=job.yolo_large_rov.%j.out      # Name of output file (%j expands to jobId)
+#SBATCH --time=3-00:00:00                       # Run time (hh:mm:ss) - run for one hour max
+#SBATCH --cpus-per-task=16                      # Schedule one core
+#SBATCH --gres=gpu:v100:2                       # Schedule a GPU, or more with gpu:2 etc
+#SBATCH --partition=red                         # Run on either the Red or Brown queue
+#SBATCH --mail-type=FAIL,END                    # Send an email when the job finishes
+
+# Print out the hostname of the node the job is running on
+hostname
+echo "Running on $(hostname):"
+nvidia-smi
+
+module load Anaconda3
+source activate thesis
+yolo detect train data=/home/sabf/thesis/thesis/datasets/rov/dataset.yaml model=yolov8l.pt epochs=100 batch=16 imgsz=1280 device=0,1
