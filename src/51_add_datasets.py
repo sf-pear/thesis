@@ -1,5 +1,6 @@
 import os
 import fiftyone as fo
+import fiftyone.brain as fob
 
 abs_path = f"{os.getcwd()}/datasets" # get pwd so it works anywhere with the same file structure without changing the code
 rov_path = "/rov"
@@ -28,6 +29,7 @@ def create_fiftyone_dataset(path_to_dataset, dataset_name, splits):
             )
         print(f"Dataset created: {dataset_name}.\n")
 
+    fob.compute_uniqueness(dataset)
     dataset.persistent = True
     return dataset
 
