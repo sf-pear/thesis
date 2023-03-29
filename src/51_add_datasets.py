@@ -2,7 +2,7 @@ import os
 import fiftyone as fo
 import fiftyone.brain as fob
 
-abs_path = f"{os.getcwd()}/datasets" # get pwd so it works anywhere with the same file structure without changing the code
+abs_path = f"{os.getcwd()}/datasets/processed" # get pwd so it works anywhere with the same file structure without changing the code
 rov_path = "/rov"
 auv_path = "/auv"
 
