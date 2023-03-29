@@ -41,3 +41,4 @@ if __name__ == "__main__":
     merged.merge_samples(auv)
     merged.merge_samples(rov)
     merged.persistent = True
+    print(f"Dataset created: merged.\n")
