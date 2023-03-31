@@ -1,0 +1,29 @@
+# txt file with path to images relative to path 
+train: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/unique_least/auv_uniqueness_train50_tail.txt
+val: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/auv/val.txt  
+
+# number of classes
+nc: 21
+
+# class names
+names: ['Pasiphaea',
+'Poeobius meseres',
+'Siphonophorae',
+'Ctenophora',
+'Medusae',
+'Eusergestes similis',
+'Octopus',
+'Larvacean',
+'Fish',
+'Squid',
+'Mysida',
+'Worm',
+'Echinoderm',
+'Other',
+'Crustacea',
+'Anemone',
+'Equipment',
+'Coral',
+'Sponge',
+'Pennatulacea', 
+'Euphausiacea']
