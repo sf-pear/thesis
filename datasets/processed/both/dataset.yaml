@@ -1,0 +1,29 @@
+# txt file with path to images relative to path 
+train: /home/sabf/thesis/datasets/processed/both/train.txt
+val: /home/sabf/thesis/datasets/processed/both/val.txt  
+
+# number of classes
+nc: 21
+
+# class names
+names: ['Pasiphaea',
+'Poeobius meseres',
+'Siphonophorae',
+'Ctenophora',
+'Medusae',
+'Eusergestes similis',
+'Octopus',
+'Larvacean',
+'Fish',
+'Squid',
+'Mysida',
+'Worm',
+'Echinoderm',
+'Other',
+'Crustacea',
+'Anemone',
+'Equipment',
+'Coral',
+'Sponge',
+'Pennatulacea', 
+'Euphausiacea']
