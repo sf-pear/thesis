@@ -1,2 +1,5 @@
 /datasets/raw
 /models/auv/exports
+/jobs/runs
+/jobs/job_outputs
+jobs/yolov8l.pt
