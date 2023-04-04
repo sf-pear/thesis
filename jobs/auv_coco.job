@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#SBATCH --job-name=yolo_large_both
+#SBATCH --output=/home/sabf/thesis/jobs/job_output/job.both.%j.out
+#SBATCH --time=3-00:00:00
+#SBATCH --cpus-per-task=16
+#SBATCH --gres=gpu:v100:4                       
+#SBATCH --partition=red
+#SBATCH --mail-type=FAIL,END
+
+# Print out the hostname of the node the job is running on
+hostname
+echo "Running on $(hostname):"
+nvidia-smi
+
+module load Anaconda3
+source activate thesis
+
+yolo detect train data=/home/sabf/thesis/datasets/processed/auv_increasing_random/dataset.yaml model=yolov8l.pt epochs=100 batch=8 imgsz=1280 device=0,1,2,3
