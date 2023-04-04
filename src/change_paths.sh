@@ -1,7 +1,8 @@
 #!/bin/bash
-
 LOCAL_NAME="beastie"
 HOSTNAME=$(hostname)
+
+cd ./datasets/processed
 
 # Set the old and new file paths based on the hostname
 if [[ $HOSTNAME == LOCAL_NAME ]]; then
@@ -13,7 +14,7 @@ else
 fi
 
 # Replace file paths based on the old and new paths, excluding the script file
-find . -type f -not -name "$(basename $0)" -exec sed -i "s|$REMOTE_PATH|$LOCAL_PATH|g" {} \;
+find . -type f \( -name "*.txt" -o -name "*.yaml" \) -not -name "$(basename $0)" -exec sed -i "s|$REMOTE_PATH|$LOCAL_PATH|g" {} \; -print
 
 
 
