@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#SBATCH --job-name=yolo_large_auv               # Job name
-#SBATCH --output=job.auv.%j.out      # Name of output file (%j expands to jobId)
-#SBATCH --time=3-00:00:00                       # Run time (hh:mm:ss) - run for one hour max
+#SBATCH --job-name=yolo_large_auv_tail          # Job name
+#SBATCH --output=job.auv.%j.out                 # Name of output file (%j expands to jobId)
+#SBATCH --time=3:00:00                          # Run time (hh:mm:ss) - run for one hour max
 #SBATCH --cpus-per-task=16                      # Schedule one core
 #SBATCH --gres=gpu:v100:4                       # Schedule a GPU, or more with gpu:2 etc
 #SBATCH --partition=red                         # Run on either the Red or Brown queue
@@ -16,4 +16,4 @@ nvidia-smi
 module load Anaconda3
 source activate thesis
 
-yolo detect train data=/home/sabf/thesis/datasets/processed/auv/dataset.yaml model=/home/sabf/thesis/models/rov/rov_yolo8l_8_1280.pt epochs=100 batch=8 imgsz=1280 device=0,1,2,3
+yolo detect train data=/home/sabf/thesis/datasets/processed/unique_least/dataset.yaml model=/home/sabf/thesis/models/rov/rov_yolo8l_8_1280.pt epochs=100 batch=8 imgsz=1280 device=0,1,2,3
