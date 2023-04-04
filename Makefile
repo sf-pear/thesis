@@ -18,3 +18,7 @@ mamba_update:
 # this only works for my local machine and hpc - version with args saved for later?
 update_paths:
 	./src/change_paths.sh
+
+# send SLURM jobs to hpc for increasing number of AUV images
+send_auv_jobs:
+	./src/send_auv_jobs.sh
