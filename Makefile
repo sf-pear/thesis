@@ -14,3 +14,7 @@ print_dir:
 
 mamba_update:
 	mamba env update -n ocean --file env.yaml
+
+# this only works for my local machine and hpc - version with args saved for later?
+update_paths:
+	./src/change_paths.sh
