@@ -3,3 +3,4 @@
 /jobs/runs
 /jobs/job_outputs
 jobs/yolov8l.pt
+notebooks/embeddings.pkl
