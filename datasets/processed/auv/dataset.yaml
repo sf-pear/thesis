@@ -3,27 +3,7 @@ train: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/auv/train.t
 val: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/auv/val.txt  
 
 # number of classes
-nc: 21
+nc: 1
 
 # class names
-names: ['Pasiphaea',
-'Poeobius meseres',
-'Siphonophorae',
-'Ctenophora',
-'Medusae',
-'Eusergestes similis',
-'Octopus',
-'Larvacean',
-'Fish',
-'Squid',
-'Mysida',
-'Worm',
-'Echinoderm',
-'Other',
-'Crustacea',
-'Anemone',
-'Equipment',
-'Coral',
-'Sponge',
-'Pennatulacea', 
-'Euphausiacea']
+names: ['Eusergestes similis']
