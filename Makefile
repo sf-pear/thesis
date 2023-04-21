@@ -13,7 +13,7 @@ print_dir:
 	python3 $(DIR)/src/51_delete_datasets.py	
 
 mamba_create:
-	mamba create -n ocean --file env.yaml
+	mamba env create -n ocean --file env.yaml
 
 mamba_update:
 	mamba env update -n ocean --file env.yaml
