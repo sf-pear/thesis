@@ -1,8 +1,21 @@
-/datasets/raw
+# too large to share
+/datasets/raw/images/*
+/datasets/raw/labels/*
 /datasets/processed/edge_impulse*/*.png
 /models/auv/exports
+notebooks/embeddings.pkl
+
+# yolo runs artifacts
 /jobs/runs
 /jobs/job_outputs
 jobs/yolov8l.pt
-notebooks/embeddings.pkl
 /runs
+*labels.cache
+
+# exclude sample files from ignore list
+# !/datasets/raw/*/0a0a3b3b-aac9-4545-a05e-d396ba4899a1*
+
+# exclude images with drawn labels
+# /artifacts/predictions/*/*.png
+# exclude everythign in predictions for now
+/artifacts/predictions/*
