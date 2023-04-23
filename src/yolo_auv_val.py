@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import pandas as pd
 import os
 
-yaml_file = f"{os.getcwd()}/datasets/auv/dataset.yaml"
+yaml_file = f"{os.getcwd()}/datasets/processed/auv/dataset.yaml"
 model_dir = f"{os.getcwd()}/models/auv/"
 
 models = os.listdir(model_dir)
