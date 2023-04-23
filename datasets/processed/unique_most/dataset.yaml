@@ -1,5 +1,5 @@
 # txt file with path to images relative to path 
-train: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/unique_most/auv_uniqueness_train50_head.txt
+train: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/unique_most/most_unique.txt
 val: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/auv/val.txt  
 
 # number of classes

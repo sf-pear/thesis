@@ -1,6 +1,6 @@
 # txt file with path to images relative to path 
-train: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/both/train.txt
-val: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/both/val.txt  
+train: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/both/both_train.txt
+val: /mnt/c/Users/sabri/Documents/github/thesis/datasets/processed/auv/val.txt  
 
 # number of classes
 nc: 21
