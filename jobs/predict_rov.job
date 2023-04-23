@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#SBATCH --job-name=yolo_rov_preds
+#SBATCH --output=/home/sabf/thesis/jobs/job_output/job.yolo_rov_preds.%j.out
+#SBATCH --time=3-00:00:00
+#SBATCH --cpus-per-task=16
+#SBATCH --gres=gpu:v100:4                       
+#SBATCH --partition=red
+#SBATCH --mail-type=BEGIN,FAIL,END
+
+# Print out the hostname of the node the job is running on
+hostname
+echo "Running on $(hostname):"
+nvidia-smi
+
+module load Anaconda3
+source activate thesis
+
+yolo detect predict source=/mnt/c/Users/sabri/Documents/github/thesis/datasets/raw/images/ model=/mnt/c/Users/sabri/Documents/github/thesis/models/both.pt save_conf=True save_txt=True imgsz=1280 batch=8 conf=0.5 device=0,1,2,3
+yolo detect predict source=/mnt/c/Users/sabri/Documents/github/thesis/datasets/raw/images/ model=/mnt/c/Users/sabri/Documents/github/thesis/models/rov/rov_yolo8n_8_1280.pt save_conf=True save_txt=True imgsz=1280 batch=16 conf=0.5 device=0,1,2,3
+yolo detect predict source=/mnt/c/Users/sabri/Documents/github/thesis/datasets/raw/images/ model=/mnt/c/Users/sabri/Documents/github/thesis/models/rov/rov_yolo8l_8_1280.pt save_conf=True save_txt=True imgsz=1280 batch=8 conf=0.5 device=0,1,2,3
