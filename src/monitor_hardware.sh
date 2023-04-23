@@ -1,32 +1,29 @@
 #!/bin/bash
 
-# Run your inference script
 python3 yolo_predict.py &
 
-# Get the PID of the inference script
+# get the PID of the inference script
 PID=$!
 
-# Define the output CSV file name
-start_time=$(date "+%Y-%m-%d_%H-%M-%S")
-# csv_filename="hardware_stats_${start_time}.csv"
-csv_filename="hardware_stats.csv"
+csv_filename="hardware_stats_tflite16.csv"
 
-# Write headers to the CSV file
-echo "timestamp,CPU,Memory,GPU_Util,GPU_Mem,Power" > $csv_filename
+# write headers to the CSV file
+echo "timestamp,CPU,Memory,GPU_Util,GPU_Mem,GPU_Mem_Free,Power" > $csv_filename
 
-# Monitor hardware utilization while the inference script is running
+# monitor hardware utilization while the inference script is running
 while [ -e /proc/$PID ]
 do
     timestamp=$(date "+%Y-%m-%d %H:%M:%S")
     
     # Get CPU and memory usage
-    cpu_mem=$(ps -p $PID -o %cpu=,%mem= --no-headers)
-    
-    # Get GPU utilization, memory, and power usage (NVIDIA GPUs only)
-    gpu_data=$(nvidia-smi --query-gpu=utilization.gpu,memory.used,power.draw --format=csv,noheader,nounits | sed 's%,%, %g' | tr '\n' ' ')
-    
-    # Write hardware utilization data to the CSV file
+    cpu_mem=$(ps -p $PID -o %cpu=,%mem= --no-headers | sed 's/ /,/')
+
+    # GPU utilization, memory, free memory, and power usage - e.g.: 0 %, 32 MiB, 5935 MiB, 8.48 W
+    gpu_data=$(nvidia-smi --query-gpu=utilization.gpu,memory.used,memory.free,power.draw --format=csv,noheader,nounits | tr -d ' ')
+
+    # write to file
     echo "${timestamp},${cpu_mem},${gpu_data}" >> $csv_filename
     
+    # fetch info every 1 second
     sleep 1
 done
